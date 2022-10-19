@@ -50,16 +50,16 @@ void APP_OLED_Show(void)
 	}
 	/***** * * * * * * * * * * * * * * * * * 第四行 * * * * * * * * * * * * * * * * * *****/
 	OLED_ShowString(0, 30, "m:");
-	if (obs_x < 0) {
-		OLED_ShowChar(15, 30, '-', 12, 1), OLED_ShowNumber(25, 30, -obs_x, 5, 12);
+	if (targetPoint_X < 0) {
+		OLED_ShowChar(15, 30, '-', 12, 1), OLED_ShowNumber(25, 30, -targetPoint_X, 5, 12);
 	} else {
-		OLED_ShowChar(15, 30, '+', 12, 1), OLED_ShowNumber(25, 30, obs_x, 5, 12);
+		OLED_ShowChar(15, 30, '+', 12, 1), OLED_ShowNumber(25, 30, targetPoint_X, 5, 12);
 	}
 	OLED_ShowString(60, 30, "n:");
-	if (obs_y < 0) {
-		OLED_ShowChar(75, 30, '-', 12, 1), OLED_ShowNumber(85, 30, -obs_y, 5, 12);
+	if (targetPoint_Y < 0) {
+		OLED_ShowChar(75, 30, '-', 12, 1), OLED_ShowNumber(85, 30, -targetPoint_Y, 5, 12);
 	} else {
-		OLED_ShowChar(75, 30, '+', 12, 1), OLED_ShowNumber(85, 30, obs_y, 5, 12);
+		OLED_ShowChar(75, 30, '+', 12, 1), OLED_ShowNumber(85, 30, targetPoint_Y, 5, 12);
 	}
 
 	/***** * * * * * * * * * * * * * * * * * 第五行 * * * * * * * * * * * * * * * * * *****/

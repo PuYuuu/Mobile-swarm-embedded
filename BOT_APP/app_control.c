@@ -43,9 +43,9 @@ int EXTI15_10_IRQHandler(void)
 					main_Controller();
 					Kinematic_Analysis(targetVx, targetVy, 0);
 				} else {
-					targetVx = ((PS2_LX - 128.0) / 128.0) * 20.0;
+					targetVz = ((128.0 - PS2_LX) / 128.0) * 30.0;
 					targetVy = ((128.0 - PS2_LY) / 128.0) * 20.0;
-					targetVz = ((128.0 - PS2_RX) / 128.0) * 30.0;
+					targetVx = ((PS2_RX - 128.0) / 128.0) * 20.0;
 					Kinematic_Analysis(targetVx, targetVy, targetVz);
 				}
 			} else {
@@ -128,8 +128,8 @@ void main_Controller(void)
 		}
 	}
 	
-	targetVx = 0.285 * VGoal_X  + 0.285 * VRobo_X + 0.430 * VObst_X;
-	targetVy = 0.285 * VGoal_Y  + 0.285 * VRobo_Y + 0.430 * VObst_Y;
+	targetVx = 0.6 * VGoal_X  + 0.285 * VRobo_X + 0.430 * VObst_X;
+	targetVy = 0.6 * VGoal_Y  + 0.285 * VRobo_Y + 0.430 * VObst_Y;
 }
 
 void Numerical_Limit(int* x, int* y, int amplitude)

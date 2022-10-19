@@ -3,7 +3,7 @@
 #include "app_communicate.h"
 
 float targetVx = 0, targetVy = 0, targetVz = 0;
-int targetPoint_X = 0, targetPoint_Y = 2700, targetPoint_Z = 0; 
+int targetPoint_X = 0, targetPoint_Y = 0, targetPoint_Z = 0; 
 
 int Encoder_A,Encoder_B,Encoder_C,Encoder_D;	
 long int Position_A,Position_B,Position_C,Position_D;                     		                 

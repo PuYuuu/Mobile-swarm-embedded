@@ -42,6 +42,14 @@ void USART1_IRQHandler(void)                		// 串口1中断服务程序
 					if (USART_RX_BUF[21] == 0x01) {
 						obs_y = -obs_y;
 					}
+					targetPoint_X = USART_RX_BUF[25] * 256 + USART_RX_BUF[26];
+					targetPoint_Y = USART_RX_BUF[28] * 256 + USART_RX_BUF[29];
+					if (USART_RX_BUF[24] == 0x01) {
+						targetPoint_X = -targetPoint_X;
+					}
+					if (USART_RX_BUF[27] == 0x01) {
+						targetPoint_Y = -targetPoint_Y;
+					}
 
 					USART_RX_STA = 0;
 				}
